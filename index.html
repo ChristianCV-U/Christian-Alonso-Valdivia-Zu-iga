@@ -2,53 +2,94 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV Académico - Christian Valdivia</title>
+
     <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
         body{
             font-family: Arial, sans-serif;
-            margin:0;
             background:#f4f4f4;
         }
 
         header{
-            background:#003366;
+            background: linear-gradient(135deg,#001f4d,#0047ab);
             color:white;
             text-align:center;
-            padding:30px;
+            padding:40px 20px;
+        }
+
+        header img{
+            width:180px;
+            height:180px;
+            border-radius:50%;
+            object-fit:cover;
+            border:5px solid white;
+            margin-bottom:15px;
+            box-shadow:0px 0px 15px rgba(0,0,0,0.4);
+        }
+
+        header h1{
+            font-size:45px;
+            margin-bottom:10px;
+        }
+
+        header p{
+            font-size:22px;
+        }
+
+        .linkedin-btn{
+            display:inline-block;
+            margin-top:20px;
+            padding:12px 25px;
+            background:white;
+            color:#0047ab;
+            text-decoration:none;
+            border-radius:10px;
+            font-weight:bold;
         }
 
         nav{
-            background:#0055aa;
-            padding:10px;
+            background:#002b66;
             text-align:center;
+            padding:15px;
         }
 
         nav a{
             color:white;
             text-decoration:none;
-            margin:15px;
+            margin:0 15px;
             font-weight:bold;
         }
 
         section{
             background:white;
-            margin:20px;
-            padding:20px;
-            border-radius:10px;
+            margin:20px auto;
+            width:90%;
+            max-width:1100px;
+            padding:25px;
+            border-radius:12px;
+            box-shadow:0px 2px 10px rgba(0,0,0,0.1);
         }
 
         h2{
             color:#003366;
+            margin-bottom:20px;
+        }
+
+        p{
+            line-height:1.6;
         }
 
         table{
             width:100%;
             border-collapse:collapse;
-        }
-
-        th, td{
-            border:1px solid black;
-            padding:10px;
+            margin-top:15px;
         }
 
         th{
@@ -56,57 +97,100 @@
             color:white;
         }
 
+        th,td{
+            border:1px solid #ccc;
+            padding:12px;
+            text-align:left;
+        }
+
+        ul{
+            margin-left:20px;
+        }
+
+        li{
+            margin:10px 0;
+        }
+
         footer{
-            text-align:center;
-            background:#003366;
+            background:#002b66;
             color:white;
-            padding:15px;
+            text-align:center;
+            padding:20px;
+            margin-top:30px;
+        }
+
+        @media(max-width:768px){
+            header h1{
+                font-size:32px;
+            }
+
+            header p{
+                font-size:18px;
+            }
+
+            table{
+                font-size:14px;
+            }
         }
     </style>
 </head>
 <body>
 
 <header>
+
+    <img src="foto.jpg" alt="Christian Valdivia">
+
     <h1>Christian Valdivia</h1>
+
     <p>Estudiante de Ciencias de la Computación - UCSP</p>
+
+    <a class="linkedin-btn"
+       href="https://www.linkedin.com/"
+       target="_blank">
+       Mi perfil de LinkedIn
+    </a>
+
 </header>
 
 <nav>
-    <a href="#perfil">Perfil</a>
+    <a href="#perfil">Sobre mí</a>
     <a href="#cursos">Cursos</a>
     <a href="#profesores">Profesores</a>
     <a href="#companeros">Compañeros</a>
 </nav>
 
 <section id="perfil">
+
     <h2>Sobre mí</h2>
 
     <p>
         Soy Christian Valdivia, estudiante de Ciencias de la Computación
         en la Universidad Católica San Pablo. Me interesa el desarrollo
-        de software, los algoritmos, la programación y la resolución
-        de problemas computacionales.
+        de software, la programación, los algoritmos y la resolución
+        de problemas computacionales. Busco seguir desarrollando mis
+        habilidades técnicas y académicas para contribuir con soluciones
+        innovadoras en el ámbito tecnológico.
     </p>
 
-    <h3>Datos personales</h3>
+    <br>
+
+    <h3>Información Personal</h3>
 
     <ul>
         <li><strong>Universidad:</strong> Universidad Católica San Pablo</li>
         <li><strong>Carrera:</strong> Ciencias de la Computación</li>
         <li><strong>Ciudad:</strong> Arequipa, Perú</li>
+        <li><strong>Email:</strong> christianvaldivia2007@gmail.com</li>
     </ul>
 
-    <h3>LinkedIn</h3>
-
-    <a href="https://www.linkedin.com/in/TU-PERFIL" target="_blank">
-        Mi perfil de LinkedIn
-    </a>
 </section>
 
 <section id="cursos">
-    <h2>Cursos de la carrera</h2>
+
+    <h2>Cursos de la Carrera</h2>
 
     <table>
+
         <tr>
             <th>Curso</th>
             <th>Descripción</th>
@@ -119,7 +203,7 @@
 
         <tr>
             <td>Lógica</td>
-            <td>Razonamiento lógico y estructuras de argumentación.</td>
+            <td>Razonamiento lógico y estructuras argumentativas.</td>
         </tr>
 
         <tr>
@@ -134,15 +218,19 @@
 
         <tr>
             <td>Formación Intelectual</td>
-            <td>Desarrollo del pensamiento crítico.</td>
+            <td>Desarrollo del pensamiento crítico y reflexivo.</td>
         </tr>
+
     </table>
+
 </section>
 
 <section id="profesores">
+
     <h2>Profesores</h2>
 
     <table>
+
         <tr>
             <th>Profesor</th>
             <th>Curso</th>
@@ -150,64 +238,67 @@
         </tr>
 
         <tr>
-            <td>Profesor 1</td>
+            <td>Profesor de Programación</td>
             <td>Programación</td>
-            <td>
-                <a href="LINK_LINKEDIN" target="_blank">
-                    Ver perfil
-                </a>
-            </td>
+            <td><a href="#">Perfil LinkedIn</a></td>
         </tr>
 
         <tr>
-            <td>Profesor 2</td>
+            <td>Profesor de Lógica</td>
             <td>Lógica</td>
-            <td>
-                <a href="LINK_LINKEDIN" target="_blank">
-                    Ver perfil
-                </a>
-            </td>
+            <td><a href="#">Perfil LinkedIn</a></td>
         </tr>
 
         <tr>
-            <td>Profesor 3</td>
+            <td>Profesor de Matemática Discreta</td>
+            <td>Matemática Discreta</td>
+            <td><a href="#">Perfil LinkedIn</a></td>
+        </tr>
+
+        <tr>
+            <td>Profesor de Costo Computacional</td>
             <td>Costo Computacional</td>
-            <td>
-                <a href="LINK_LINKEDIN" target="_blank">
-                    Ver perfil
-                </a>
-            </td>
+            <td><a href="#">Perfil LinkedIn</a></td>
         </tr>
 
     </table>
+
 </section>
 
 <section id="companeros">
-    <h2>Páginas de compañeros</h2>
+
+    <h2>Páginas de Compañeros</h2>
 
     <ul>
+
         <li>
-            <a href="https://github.io/compañero1" target="_blank">
-                Página de Compañero 1
+            <a href="#">
+                Página Web del Compañero 1
             </a>
         </li>
 
         <li>
-            <a href="https://github.io/compañero2" target="_blank">
-                Página de Compañero 2
+            <a href="#">
+                Página Web del Compañero 2
             </a>
         </li>
 
         <li>
-            <a href="https://github.io/compañero3" target="_blank">
-                Página de Compañero 3
+            <a href="#">
+                Página Web del Compañero 3
             </a>
         </li>
+
     </ul>
+
 </section>
 
 <footer>
-    <p>© 2026 - Christian Valdivia</p>
+
+    <p>
+        © 2026 Christian Valdivia - Ciencias de la Computación UCSP
+    </p>
+
 </footer>
 
 </body>
