@@ -3,337 +3,474 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Académico - Christian Valdivia</title>
+    <title>Christian Valdivia | CV Académico</title>
 
     <style>
         *{
             margin:0;
             padding:0;
             box-sizing:border-box;
+            scroll-behavior:smooth;
         }
 
         body{
-            font-family: Arial, sans-serif;
-            background:#0b1120;
+            font-family:'Segoe UI', Arial, sans-serif;
+            background:#080b14;
             color:#e5e7eb;
         }
 
-        header{
-            background:linear-gradient(135deg,#020617,#111827,#1e3a8a);
+        .hero{
+            min-height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            padding:40px 8%;
+            background:
+                radial-gradient(circle at top left, rgba(37,99,235,0.35), transparent 35%),
+                radial-gradient(circle at bottom right, rgba(14,165,233,0.25), transparent 35%),
+                #080b14;
+        }
+
+        .hero-card{
+            width:100%;
+            max-width:1150px;
+            display:grid;
+            grid-template-columns:1fr 1.4fr;
+            gap:40px;
+            background:rgba(15,23,42,0.85);
+            border:1px solid rgba(148,163,184,0.2);
+            border-radius:28px;
+            padding:35px;
+            box-shadow:0 25px 60px rgba(0,0,0,0.55);
+            backdrop-filter:blur(12px);
+        }
+
+        .profile{
             text-align:center;
-            padding:45px 20px;
-            border-bottom:3px solid #2563eb;
+            background:#020617;
+            border-radius:24px;
+            padding:30px 20px;
+            border:1px solid #1e293b;
         }
 
-        header img{
-            width:190px;
+        .profile img{
+            width:210px;
             height:auto;
-            border-radius:12px;
-            display:block;
-            margin:0 auto 18px auto;
-            border:4px solid #60a5fa;
-            box-shadow:0 0 25px rgba(37,99,235,0.6);
+            border-radius:18px;
+            border:4px solid #38bdf8;
+            box-shadow:0 0 30px rgba(56,189,248,0.45);
+            margin-bottom:20px;
         }
 
-        header h1{
-            font-size:42px;
+        .profile h1{
+            font-size:34px;
             color:white;
+            margin-bottom:8px;
         }
 
-        header p{
-            font-size:20px;
-            color:#cbd5e1;
-            margin-top:8px;
+        .profile p{
+            color:#94a3b8;
+            margin-bottom:20px;
         }
 
-        .linkedin-btn{
+        .btn{
             display:inline-block;
-            margin-top:18px;
-            padding:12px 24px;
+            padding:12px 20px;
+            border-radius:12px;
             background:#2563eb;
             color:white;
             text-decoration:none;
-            border-radius:8px;
             font-weight:bold;
+            transition:0.3s;
         }
 
-        .linkedin-btn:hover{
+        .btn:hover{
             background:#1d4ed8;
+            transform:translateY(-3px);
+        }
+
+        .intro{
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+        }
+
+        .badge{
+            display:inline-block;
+            width:max-content;
+            padding:8px 14px;
+            border-radius:999px;
+            background:rgba(37,99,235,0.15);
+            color:#93c5fd;
+            border:1px solid rgba(147,197,253,0.3);
+            margin-bottom:18px;
+            font-size:14px;
+        }
+
+        .intro h2{
+            font-size:46px;
+            line-height:1.1;
+            color:white;
+            margin-bottom:20px;
+        }
+
+        .intro h2 span{
+            color:#38bdf8;
+        }
+
+        .intro p{
+            color:#cbd5e1;
+            font-size:18px;
+            line-height:1.7;
+            margin-bottom:25px;
+        }
+
+        .info-grid{
+            display:grid;
+            grid-template-columns:repeat(2,1fr);
+            gap:15px;
+        }
+
+        .info-box{
+            background:#020617;
+            border:1px solid #1e293b;
+            padding:18px;
+            border-radius:16px;
+        }
+
+        .info-box strong{
+            color:#38bdf8;
+            display:block;
+            margin-bottom:6px;
         }
 
         nav{
-            background:#020617;
-            text-align:center;
-            padding:15px;
+            position:sticky;
+            top:0;
+            z-index:10;
+            background:rgba(2,6,23,0.9);
+            backdrop-filter:blur(10px);
             border-bottom:1px solid #1e293b;
+            padding:15px;
+            text-align:center;
         }
 
         nav a{
-            color:#dbeafe;
+            color:#cbd5e1;
             text-decoration:none;
-            margin:0 15px;
-            font-weight:bold;
+            margin:0 18px;
+            font-weight:600;
         }
 
         nav a:hover{
-            color:#60a5fa;
+            color:#38bdf8;
         }
 
         section{
-            background:#111827;
-            margin:25px auto;
             width:90%;
-            max-width:1100px;
-            padding:25px;
-            border-radius:14px;
+            max-width:1150px;
+            margin:40px auto;
+        }
+
+        .section-title{
+            font-size:32px;
+            color:white;
+            margin-bottom:22px;
+        }
+
+        .section-title span{
+            color:#38bdf8;
+        }
+
+        .cards{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+            gap:20px;
+        }
+
+        .card{
+            background:#0f172a;
             border:1px solid #1e293b;
-            box-shadow:0 4px 18px rgba(0,0,0,0.4);
+            border-radius:20px;
+            padding:22px;
+            box-shadow:0 10px 25px rgba(0,0,0,0.25);
+            transition:0.3s;
         }
 
-        h2{
-            color:#60a5fa;
-            margin-bottom:18px;
-            border-bottom:2px solid #2563eb;
-            padding-bottom:8px;
+        .card:hover{
+            transform:translateY(-5px);
+            border-color:#38bdf8;
         }
 
-        h3{
+        .card h3{
             color:#93c5fd;
-            margin-top:15px;
+            margin-bottom:10px;
         }
 
-        p{
+        .card p{
+            color:#cbd5e1;
             line-height:1.6;
         }
 
-        ul{
-            margin-left:20px;
+        .teacher-card{
+            display:flex;
+            flex-direction:column;
+            gap:8px;
         }
 
-        li{
-            margin:10px 0;
-        }
-
-        table{
-            width:100%;
-            border-collapse:collapse;
-            margin-top:15px;
-            background:#0f172a;
-        }
-
-        th{
-            background:#1e3a8a;
+        .teacher-card h3{
             color:white;
         }
 
-        th,td{
-            border:1px solid #334155;
-            padding:12px;
-            text-align:left;
+        .course{
+            color:#38bdf8;
+            font-weight:bold;
         }
 
-        td{
-            color:#e5e7eb;
+        .email{
+            color:#94a3b8;
+            font-size:14px;
+            word-break:break-all;
         }
 
-        a{
+        .teacher-card a,
+        .links-card a{
             color:#93c5fd;
+            text-decoration:none;
+            margin-top:8px;
+            font-weight:bold;
         }
 
-        a:hover{
-            color:#60a5fa;
+        .teacher-card a:hover,
+        .links-card a:hover{
+            color:#38bdf8;
         }
 
         footer{
-            background:#020617;
-            color:#cbd5e1;
             text-align:center;
-            padding:22px;
-            margin-top:35px;
-            border-top:2px solid #2563eb;
+            padding:30px;
+            background:#020617;
+            color:#94a3b8;
+            border-top:1px solid #1e293b;
+            margin-top:50px;
         }
 
-        @media(max-width:768px){
-            header h1{
-                font-size:30px;
+        @media(max-width:850px){
+            .hero-card{
+                grid-template-columns:1fr;
             }
 
-            header p{
-                font-size:17px;
+            .intro h2{
+                font-size:34px;
+            }
+
+            .info-grid{
+                grid-template-columns:1fr;
             }
 
             nav a{
                 display:block;
                 margin:10px 0;
             }
-
-            table{
-                font-size:13px;
-            }
         }
     </style>
 </head>
+
 <body>
 
-<header>
+    <div class="hero" id="inicio">
+        <div class="hero-card">
 
-    <img src="Cristhian--.jpg.jpeg" alt="Foto de Christian Valdivia">
+            <div class="profile">
+                <img src="Chris.jpg.jpeg" alt="Foto de Christian Valdivia">
 
-    <h1>Christian Valdivia</h1>
+                <h1>Christian Valdivia</h1>
+                <p>Estudiante de Ciencias de la Computación</p>
 
-    <p>Estudiante de Ciencias de la Computación - UCSP</p>
+                <a class="btn" href="https://www.linkedin.com/" target="_blank">
+                    Ver LinkedIn
+                </a>
+            </div>
 
-    <a class="linkedin-btn" href="https://www.linkedin.com/" target="_blank">
-        Mi perfil de LinkedIn
-    </a>
+            <div class="intro">
+                <span class="badge">Universidad Católica San Pablo</span>
 
-</header>
+                <h2>CV académico y portafolio <span>universitario</span></h2>
 
-<nav>
-    <a href="#perfil">Sobre mí</a>
-    <a href="#cursos">Cursos</a>
-    <a href="#profesores">Profesores</a>
-    <a href="#companeros">Compañeros</a>
-</nav>
+                <p>
+                    Soy estudiante de Ciencias de la Computación en la Universidad Católica San Pablo.
+                    Me interesa la programación, el análisis de algoritmos, la lógica computacional
+                    y el desarrollo de soluciones tecnológicas.
+                </p>
 
-<section id="perfil">
+                <div class="info-grid">
+                    <div class="info-box">
+                        <strong>Carrera</strong>
+                        Ciencias de la Computación
+                    </div>
 
-    <h2>Sobre mí</h2>
+                    <div class="info-box">
+                        <strong>Ciudad</strong>
+                        Arequipa, Perú
+                    </div>
 
-    <p>
-        Soy Christian Valdivia, estudiante de Ciencias de la Computación
-        en la Universidad Católica San Pablo. Me interesa la programación,
-        los algoritmos, el análisis de problemas y el desarrollo de soluciones
-        tecnológicas. Busco seguir aprendiendo y mejorar mis habilidades dentro
-        de mi formación universitaria.
-    </p>
+                    <div class="info-box">
+                        <strong>Email</strong>
+                        christianvaldivia2007@gmail.com
+                    </div>
 
-    <h3>Información personal</h3>
+                    <div class="info-box">
+                        <strong>Universidad</strong>
+                        UCSP
+                    </div>
+                </div>
+            </div>
 
-    <ul>
-        <li><strong>Universidad:</strong> Universidad Católica San Pablo</li>
-        <li><strong>Carrera:</strong> Ciencias de la Computación</li>
-        <li><strong>Ciudad:</strong> Arequipa, Perú</li>
-        <li><strong>Email:</strong> christianvaldivia2007@gmail.com</li>
-    </ul>
+        </div>
+    </div>
 
-</section>
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#cursos">Cursos</a>
+        <a href="#profesores">Profesores</a>
+        <a href="#companeros">Compañeros</a>
+    </nav>
 
-<section id="cursos">
+    <section id="cursos">
+        <h2 class="section-title">Cursos de la <span>carrera</span></h2>
 
-    <h2>Cursos de la carrera</h2>
+        <div class="cards">
 
-    <table>
-        <tr>
-            <th>Curso</th>
-            <th>Descripción</th>
-        </tr>
+            <div class="card">
+                <h3>Introducción a la Computación</h3>
+                <p>
+                    Curso orientado a conocer los fundamentos de la computación,
+                    la carrera y el uso de herramientas tecnológicas.
+                </p>
+            </div>
 
-        <tr>
-            <td>Introducción a la Computación</td>
-            <td>Curso orientado a conocer los fundamentos de la computación, la carrera y el uso de herramientas tecnológicas.</td>
-        </tr>
+            <div class="card">
+                <h3>Fundamentos Matemáticos para Computación</h3>
+                <p>
+                    Curso enfocado en las bases matemáticas necesarias para
+                    el razonamiento computacional.
+                </p>
+            </div>
 
-        <tr>
-            <td>Fundamentos Matemáticos para Computación</td>
-            <td>Curso enfocado en bases matemáticas necesarias para el razonamiento computacional.</td>
-        </tr>
+            <div class="card">
+                <h3>Fundamentos de la Programación</h3>
+                <p>
+                    Curso donde se aprenden conceptos básicos de programación,
+                    lógica de código y resolución de problemas.
+                </p>
+            </div>
 
-        <tr>
-            <td>Fundamentos de la Programación</td>
-            <td>Curso donde se aprenden conceptos básicos de programación, lógica de código y resolución de problemas.</td>
-        </tr>
+            <div class="card">
+                <h3>Lógica</h3>
+                <p>
+                    Curso centrado en el razonamiento lógico, proposiciones,
+                    argumentos y pensamiento crítico.
+                </p>
+            </div>
 
-        <tr>
-            <td>Lógica</td>
-            <td>Curso centrado en el razonamiento lógico, argumentos, proposiciones y pensamiento crítico.</td>
-        </tr>
+            <div class="card">
+                <h3>Comunicación I</h3>
+                <p>
+                    Curso enfocado en mejorar la expresión oral, escrita
+                    y la comunicación académica.
+                </p>
+            </div>
 
-        <tr>
-            <td>Comunicación I</td>
-            <td>Curso enfocado en mejorar la expresión oral, escrita y la comunicación académica.</td>
-        </tr>
+            <div class="card">
+                <h3>Introducción a la Vida Universitaria</h3>
+                <p>
+                    Curso de adaptación a la vida universitaria, organización
+                    académica y desarrollo personal.
+                </p>
+            </div>
 
-        <tr>
-            <td>Introducción a la Vida Universitaria</td>
-            <td>Curso de adaptación a la vida universitaria, organización académica y desarrollo personal.</td>
-        </tr>
-    </table>
+        </div>
+    </section>
 
-</section>
+    <section id="profesores">
+        <h2 class="section-title">Docentes y <span>LinkedIn</span></h2>
 
-<section id="profesores">
+        <div class="cards">
 
-    <h2>Profesores</h2>
+            <div class="card teacher-card">
+                <h3>Ernesto Cuadros Vargas</h3>
+                <p class="course">Introducción a la Computación</p>
+                <p class="email">ernesto.cuadros@ucsp.edu.pe</p>
+                <a href="#" target="_blank">Consultar LinkedIn profesional</a>
+            </div>
 
-    <table>
-        <tr>
-            <th>Curso</th>
-            <th>Docente</th>
-            <th>Email</th>
-            <th>LinkedIn</th>
-        </tr>
+            <div class="card teacher-card">
+                <h3>Sabrina Graciela Suarez Calcina</h3>
+                <p class="course">Fundamentos Matemáticos para Computación</p>
+                <p class="email">sgsuarez@ucsp.edu.pe</p>
+                <a href="#" target="_blank">Consultar LinkedIn profesional</a>
+            </div>
 
-        <tr>
-            <td>Introducción a la Computación</td>
-            <td>Ernesto Cuadros Vargas</td>
-            <td><a href="mailto:ernesto.cuadros@ucsp.edu.pe">ernesto.cuadros@ucsp.edu.pe</a></td>
-            <td><a href="#" target="_blank">Consultar LinkedIn profesional</a></td>
-        </tr>
+            <div class="card teacher-card">
+                <h3>Kelly Vizconde La Motta</h3>
+                <p class="course">Fundamentos de la Programación</p>
+                <p class="email">kvizconde@ucsp.edu.pe</p>
+                <a href="#" target="_blank">Consultar LinkedIn profesional</a>
+            </div>
 
-        <tr>
-            <td>Fundamentos Matemáticos para Computación</td>
-            <td>Sabrina Graciela Suarez Calcina</td>
-            <td><a href="mailto:sgsuarez@ucsp.edu.pe">sgsuarez@ucsp.edu.pe</a></td>
-            <td><a href="#" target="_blank">Consultar LinkedIn profesional</a></td>
-        </tr>
+            <div class="card teacher-card">
+                <h3>Yahaira Byrne Rivera</h3>
+                <p class="course">Lógica</p>
+                <p class="email">yahaira.byrne@ucsp.edu.pe</p>
+                <a href="#" target="_blank">Consultar LinkedIn profesional</a>
+            </div>
 
-        <tr>
-            <td>Fundamentos de la Programación</td>
-            <td>Kelly Vizconde La Motta</td>
-            <td><a href="mailto:kvizconde@ucsp.edu.pe">kvizconde@ucsp.edu.pe</a></td>
-            <td><a href="#" target="_blank">Consultar LinkedIn profesional</a></td>
-        </tr>
+            <div class="card teacher-card">
+                <h3>Ángel Rodríguez Cruz</h3>
+                <p class="course">Comunicación I</p>
+                <p class="email">angel.rodriguez@ucsp.edu.pe</p>
+                <a href="#" target="_blank">Consultar LinkedIn profesional</a>
+            </div>
 
-        <tr>
-            <td>Lógica</td>
-            <td>Yahaira Byrne Rivera</td>
-            <td><a href="mailto:yahaira.byrne@ucsp.edu.pe">yahaira.byrne@ucsp.edu.pe</a></td>
-            <td><a href="#" target="_blank">Consultar LinkedIn profesional</a></td>
-        </tr>
+            <div class="card teacher-card">
+                <h3>Pierina Pacheco Leyton</h3>
+                <p class="course">Introducción a la Vida Universitaria</p>
+                <p class="email">ppacheco@ucsp.edu.pe</p>
+                <a href="#" target="_blank">Consultar LinkedIn profesional</a>
+            </div>
 
-        <tr>
-            <td>Comunicación I</td>
-            <td>Ángel Rodríguez Cruz</td>
-            <td><a href="mailto:angel.rodriguez@ucsp.edu.pe">angel.rodriguez@ucsp.edu.pe</a></td>
-            <td><a href="#" target="_blank">Consultar LinkedIn profesional</a></td>
-        </tr>
+        </div>
+    </section>
 
-        <tr>
-            <td>Introducción a la Vida Universitaria</td>
-            <td>Pierina Pacheco Leyton</td>
-            <td><a href="mailto:ppacheco@ucsp.edu.pe">ppacheco@ucsp.edu.pe</a></td>
-            <td><a href="#" target="_blank">Consultar LinkedIn profesional</a></td>
-        </tr>
-    </table>
+    <section id="companeros">
+        <h2 class="section-title">Páginas de <span>compañeros</span></h2>
 
-</section>
+        <div class="cards">
 
-<section id="companeros">
+            <div class="card links-card">
+                <h3>Compañero 1</h3>
+                <p>Página personal o académica del compañero.</p>
+                <a href="#" target="_blank">Visitar página</a>
+            </div>
 
-    <h2>Páginas de compañeros</h2>
+            <div class="card links-card">
+                <h3>Compañero 2</h3>
+                <p>Página personal o académica del compañero.</p>
+                <a href="#" target="_blank">Visitar página</a>
+            </div>
 
-    <ul>
-        <li><a href="#" target="_blank">Página web del compañero 1</a></li>
-        <li><a href="#" target="_blank">Página web del compañero 2</a></li>
-        <li><a href="#" target="_blank">Página web del compañero 3</a></li>
-    </ul>
+            <div class="card links-card">
+                <h3>Compañero 3</h3>
+                <p>Página personal o académica del compañero.</p>
+                <a href="#" target="_blank">Visitar página</a>
+            </div>
 
-</section>
+        </div>
+    </section>
 
-<footer>
-    <p>© 2026 Christian Valdivia - Ciencias de la Computación UCSP</p>
-</footer>
+    <footer>
+        <p>© 2026 Christian Valdivia | Ciencias de la Computación - UCSP</p>
+    </footer>
 
 </body>
 </html>
