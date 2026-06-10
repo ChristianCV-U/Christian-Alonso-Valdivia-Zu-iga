@@ -14,94 +14,96 @@
 
         body{
             font-family: Arial, sans-serif;
-            background:#f4f4f4;
+            background:#0b1120;
+            color:#e5e7eb;
         }
 
         header{
-            background: linear-gradient(135deg,#001f4d,#0047ab);
-            color:white;
+            background:linear-gradient(135deg,#020617,#111827,#1e3a8a);
             text-align:center;
-            padding:40px 20px;
+            padding:45px 20px;
+            border-bottom:3px solid #2563eb;
         }
 
         header img{
-            width:180px;
+            width:190px;
             height:auto;
-            border-radius:10px;
-            object-fit:contain;
+            border-radius:12px;
             display:block;
-            margin:0 auto 15px auto;
-            border:4px solid white;
-            box-shadow:0px 0px 15px rgba(0,0,0,0.4);
+            margin:0 auto 18px auto;
+            border:4px solid #60a5fa;
+            box-shadow:0 0 25px rgba(37,99,235,0.6);
         }
 
         header h1{
-            font-size:45px;
-            margin-bottom:10px;
+            font-size:42px;
+            color:white;
         }
 
         header p{
-            font-size:22px;
+            font-size:20px;
+            color:#cbd5e1;
+            margin-top:8px;
         }
 
         .linkedin-btn{
             display:inline-block;
-            margin-top:20px;
-            padding:12px 25px;
-            background:white;
-            color:#0047ab;
+            margin-top:18px;
+            padding:12px 24px;
+            background:#2563eb;
+            color:white;
             text-decoration:none;
-            border-radius:10px;
+            border-radius:8px;
             font-weight:bold;
         }
 
+        .linkedin-btn:hover{
+            background:#1d4ed8;
+        }
+
         nav{
-            background:#002b66;
+            background:#020617;
             text-align:center;
             padding:15px;
+            border-bottom:1px solid #1e293b;
         }
 
         nav a{
-            color:white;
+            color:#dbeafe;
             text-decoration:none;
             margin:0 15px;
             font-weight:bold;
         }
 
+        nav a:hover{
+            color:#60a5fa;
+        }
+
         section{
-            background:white;
-            margin:20px auto;
+            background:#111827;
+            margin:25px auto;
             width:90%;
             max-width:1100px;
             padding:25px;
-            border-radius:12px;
-            box-shadow:0px 2px 10px rgba(0,0,0,0.1);
+            border-radius:14px;
+            border:1px solid #1e293b;
+            box-shadow:0 4px 18px rgba(0,0,0,0.4);
         }
 
         h2{
-            color:#003366;
-            margin-bottom:20px;
+            color:#60a5fa;
+            margin-bottom:18px;
+            border-bottom:2px solid #2563eb;
+            padding-bottom:8px;
+        }
+
+        h3{
+            color:#93c5fd;
+            margin-top:15px;
         }
 
         p{
             line-height:1.6;
-        }
-
-        table{
-            width:100%;
-            border-collapse:collapse;
-            margin-top:15px;
-        }
-
-        th{
-            background:#003366;
-            color:white;
-        }
-
-        th,td{
-            border:1px solid #ccc;
-            padding:12px;
-            text-align:left;
         }
 
         ul{
@@ -112,25 +114,61 @@
             margin:10px 0;
         }
 
-        footer{
-            background:#002b66;
+        table{
+            width:100%;
+            border-collapse:collapse;
+            margin-top:15px;
+            background:#0f172a;
+        }
+
+        th{
+            background:#1e3a8a;
             color:white;
+        }
+
+        th,td{
+            border:1px solid #334155;
+            padding:12px;
+            text-align:left;
+        }
+
+        td{
+            color:#e5e7eb;
+        }
+
+        a{
+            color:#93c5fd;
+        }
+
+        a:hover{
+            color:#60a5fa;
+        }
+
+        footer{
+            background:#020617;
+            color:#cbd5e1;
             text-align:center;
-            padding:20px;
-            margin-top:30px;
+            padding:22px;
+            margin-top:35px;
+            border-top:2px solid #2563eb;
         }
 
         @media(max-width:768px){
             header h1{
-                font-size:32px;
+                font-size:30px;
             }
 
             header p{
-                font-size:18px;
+                font-size:17px;
+            }
+
+            nav a{
+                display:block;
+                margin:10px 0;
             }
 
             table{
-                font-size:14px;
+                font-size:13px;
             }
         }
     </style>
@@ -139,17 +177,14 @@
 
 <header>
 
-    <!-- CAMBIA EL NOMBRE SI TU FOTO TIENE OTRO -->
-    <img src="Cristhian--.jpg.jpeg" alt="Christian Valdivia">
+    <img src="Cristhian--.jpg.jpeg" alt="Foto de Christian Valdivia">
 
     <h1>Christian Valdivia</h1>
 
     <p>Estudiante de Ciencias de la Computación - UCSP</p>
 
-    <a class="linkedin-btn"
-       href="https://www.linkedin.com/"
-       target="_blank">
-       Mi perfil de LinkedIn
+    <a class="linkedin-btn" href="https://www.linkedin.com/" target="_blank">
+        Mi perfil de LinkedIn
     </a>
 
 </header>
@@ -167,14 +202,13 @@
 
     <p>
         Soy Christian Valdivia, estudiante de Ciencias de la Computación
-        en la Universidad Católica San Pablo. Me interesa el desarrollo
-        de software, la programación, los algoritmos y la resolución
-        de problemas computacionales.
+        en la Universidad Católica San Pablo. Me interesa la programación,
+        los algoritmos, el análisis de problemas y el desarrollo de soluciones
+        tecnológicas. Busco seguir aprendiendo y mejorar mis habilidades dentro
+        de mi formación universitaria.
     </p>
 
-    <br>
-
-    <h3>Información Personal</h3>
+    <h3>Información personal</h3>
 
     <ul>
         <li><strong>Universidad:</strong> Universidad Católica San Pablo</li>
@@ -187,40 +221,43 @@
 
 <section id="cursos">
 
-    <h2>Cursos de la Carrera</h2>
+    <h2>Cursos de la carrera</h2>
 
     <table>
-
         <tr>
             <th>Curso</th>
             <th>Descripción</th>
         </tr>
 
         <tr>
-            <td>Programación</td>
-            <td>Fundamentos de programación utilizando Python.</td>
+            <td>Introducción a la Computación</td>
+            <td>Curso orientado a conocer los fundamentos de la computación, la carrera y el uso de herramientas tecnológicas.</td>
+        </tr>
+
+        <tr>
+            <td>Fundamentos Matemáticos para Computación</td>
+            <td>Curso enfocado en bases matemáticas necesarias para el razonamiento computacional.</td>
+        </tr>
+
+        <tr>
+            <td>Fundamentos de la Programación</td>
+            <td>Curso donde se aprenden conceptos básicos de programación, lógica de código y resolución de problemas.</td>
         </tr>
 
         <tr>
             <td>Lógica</td>
-            <td>Razonamiento lógico y estructuras argumentativas.</td>
+            <td>Curso centrado en el razonamiento lógico, argumentos, proposiciones y pensamiento crítico.</td>
         </tr>
 
         <tr>
-            <td>Matemática Discreta</td>
-            <td>Conjuntos, relaciones, grafos y combinatoria.</td>
+            <td>Comunicación I</td>
+            <td>Curso enfocado en mejorar la expresión oral, escrita y la comunicación académica.</td>
         </tr>
 
         <tr>
-            <td>Costo Computacional</td>
-            <td>Análisis de algoritmos y complejidad temporal.</td>
+            <td>Introducción a la Vida Universitaria</td>
+            <td>Curso de adaptación a la vida universitaria, organización académica y desarrollo personal.</td>
         </tr>
-
-        <tr>
-            <td>Formación Intelectual</td>
-            <td>Desarrollo del pensamiento crítico y reflexivo.</td>
-        </tr>
-
     </table>
 
 </section>
@@ -230,61 +267,72 @@
     <h2>Profesores</h2>
 
     <table>
-
         <tr>
-            <th>Profesor</th>
             <th>Curso</th>
+            <th>Docente</th>
+            <th>Email</th>
             <th>LinkedIn</th>
         </tr>
 
         <tr>
-            <td>Profesor de Programación</td>
-            <td>Programación</td>
-            <td><a href="#">Perfil LinkedIn</a></td>
+            <td>Introducción a la Computación</td>
+            <td>Ernesto Cuadros Vargas</td>
+            <td><a href="mailto:ernesto.cuadros@ucsp.edu.pe">ernesto.cuadros@ucsp.edu.pe</a></td>
+            <td><a href="#" target="_blank">Consultar LinkedIn profesional</a></td>
         </tr>
 
         <tr>
-            <td>Profesor de Lógica</td>
+            <td>Fundamentos Matemáticos para Computación</td>
+            <td>Sabrina Graciela Suarez Calcina</td>
+            <td><a href="mailto:sgsuarez@ucsp.edu.pe">sgsuarez@ucsp.edu.pe</a></td>
+            <td><a href="#" target="_blank">Consultar LinkedIn profesional</a></td>
+        </tr>
+
+        <tr>
+            <td>Fundamentos de la Programación</td>
+            <td>Kelly Vizconde La Motta</td>
+            <td><a href="mailto:kvizconde@ucsp.edu.pe">kvizconde@ucsp.edu.pe</a></td>
+            <td><a href="#" target="_blank">Consultar LinkedIn profesional</a></td>
+        </tr>
+
+        <tr>
             <td>Lógica</td>
-            <td><a href="#">Perfil LinkedIn</a></td>
+            <td>Yahaira Byrne Rivera</td>
+            <td><a href="mailto:yahaira.byrne@ucsp.edu.pe">yahaira.byrne@ucsp.edu.pe</a></td>
+            <td><a href="#" target="_blank">Consultar LinkedIn profesional</a></td>
         </tr>
 
         <tr>
-            <td>Profesor de Matemática Discreta</td>
-            <td>Matemática Discreta</td>
-            <td><a href="#">Perfil LinkedIn</a></td>
+            <td>Comunicación I</td>
+            <td>Ángel Rodríguez Cruz</td>
+            <td><a href="mailto:angel.rodriguez@ucsp.edu.pe">angel.rodriguez@ucsp.edu.pe</a></td>
+            <td><a href="#" target="_blank">Consultar LinkedIn profesional</a></td>
         </tr>
 
         <tr>
-            <td>Profesor de Costo Computacional</td>
-            <td>Costo Computacional</td>
-            <td><a href="#">Perfil LinkedIn</a></td>
+            <td>Introducción a la Vida Universitaria</td>
+            <td>Pierina Pacheco Leyton</td>
+            <td><a href="mailto:ppacheco@ucsp.edu.pe">ppacheco@ucsp.edu.pe</a></td>
+            <td><a href="#" target="_blank">Consultar LinkedIn profesional</a></td>
         </tr>
-
     </table>
 
 </section>
 
 <section id="companeros">
 
-    <h2>Páginas de Compañeros</h2>
+    <h2>Páginas de compañeros</h2>
 
     <ul>
-
-        <li><a href="#">Página Web del Compañero 1</a></li>
-        <li><a href="#">Página Web del Compañero 2</a></li>
-        <li><a href="#">Página Web del Compañero 3</a></li>
-
+        <li><a href="#" target="_blank">Página web del compañero 1</a></li>
+        <li><a href="#" target="_blank">Página web del compañero 2</a></li>
+        <li><a href="#" target="_blank">Página web del compañero 3</a></li>
     </ul>
 
 </section>
 
 <footer>
-
-    <p>
-        © 2026 Christian Valdivia - Ciencias de la Computación UCSP
-    </p>
-
+    <p>© 2026 Christian Valdivia - Ciencias de la Computación UCSP</p>
 </footer>
 
 </body>
